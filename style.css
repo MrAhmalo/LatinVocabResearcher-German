@@ -97,6 +97,8 @@ th {
   font-weight: bold;
   text-align: left;
   padding: 8px;
+  table-layout: fixed;
+  width: 100%;
 }
 
 td {
@@ -115,4 +117,3 @@ table, th, td {
   #myInput {
 	width: 300px;
   }
-  
