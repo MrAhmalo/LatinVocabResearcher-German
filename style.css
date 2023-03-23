@@ -71,7 +71,7 @@ table, th, td {
   
   .rounded-table th,
   .rounded-table td {
-	border: 25px solid rgb(236, 179, 94);
+	border: 50px solid rgb(236, 179, 94);
 	padding: 25px;
   }
 
