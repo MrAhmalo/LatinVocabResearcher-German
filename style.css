@@ -63,6 +63,12 @@ table, th, td {
 	background-color: #ffffff;
   }
 
+  .rounded-table {
+	border-radius: 10px;
+	overflow: hidden;
+  }
+
+  
 #myInput {
 	width: 200px;
 	height: 200px;
