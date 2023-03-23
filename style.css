@@ -66,7 +66,7 @@ table, th, td {
   .rounded-table {
 	border-collapse: separate;
 	border-spacing: 0;
-	border-radius: 25px;
+	border-radius: 50px;
   }
   
   .rounded-table th,
