@@ -64,11 +64,11 @@ table, th, td {
   }
 
   .rounded-table {
-	border-radius: 10px;
+	border-radius: 5px;
 	overflow: hidden;
   }
 
-  
+
 #myInput {
 	width: 200px;
 	height: 200px;
