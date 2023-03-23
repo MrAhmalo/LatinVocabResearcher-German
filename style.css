@@ -62,18 +62,6 @@ table, th, td {
   tr:nth-child(even) {
 	background-color: #ffffff;
   }
-	
-  .rounded-table {
-	border-collapse: separate;
-	border-spacing: 0;
-	border-radius: 50px;
-  }
-  
-  .rounded-table th,
-  .rounded-table td {
-	border: 1px solid rgb(236, 179, 94);
-	padding: 25px;
-  }
 
 #myInput {
 	width: 200px;
