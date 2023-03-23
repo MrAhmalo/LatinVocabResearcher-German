@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "ReVocab",
+    "short_name": "ReVocab",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#0b6bb1",
+    "background_color": "#0b6bb1",
     "display": "standalone"
 }
