@@ -47,13 +47,13 @@ th {
   top: 0;
   z-index: 1;
   border-radius: 5px;
-  border: 1px solid #999999;
+  border: 2px solid #999999;
 }
 
 td {
   padding: 8px;
   border-radius: 5px;
-  border: 1px solid #999999;
+  border: 2px solid #999999;
 }
 
 table, th, td {
