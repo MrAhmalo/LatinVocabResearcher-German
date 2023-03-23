@@ -1,75 +1,67 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <title>Suchfeld Tabelle</title>
-    <style>
-        body {
-            background-color: #154c79;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        table, th, td {
-            border: 1px solid black;
-            padding: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-    </style>
-</head>
-<body>
-    <h3>Suche nach Wörtern in der Tabelle</h3>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Suche nach Wörtern..">
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Alter</th>
-            <th>Stadt</th>
-        </tr>
-        <tr>
-            <td>John</td>
-            <td>20</td>
-            <td>New York</td>
-        </tr>
-        <tr>
-            <td>Jane</td>
-            <td>25</td>
-            <td>London</td>
-        </tr>
-        <tr>
-            <td>Peter</td>
-            <td>30</td>
-            <td>Berlin</td>
-        </tr>
-    </table>
-    <script>
-        function myFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementsByTagName("table")[0];
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td");
-                for (var j = 0; j < td.length; j++) {
-                    if (td[j]) {
-                        txtValue = td[j].textContent || td[j].innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = "";
-                            break;
-                        } else {
-                            tr[i].style.display = "none";
-                        }
-                    }       
-                }
+    <head>
+        <title>Suche innerhalb einer Tabelle</title>
+        <style>
+            body {
+                background-color: #154c79;
+                color: white;
             }
-        }
-    </script>
-</body>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+            #search {
+                width: 50%;
+                padding: 16px;
+                font-size: 16px;
+                border: 1px solid #154c79;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="search" placeholder="Suche..">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Adresse</th>
+                <th>Stadt</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>Kölner Straße 123</td>
+                <td>Köln</td>
+            </tr>
+            <tr>
+                <td>Max Mustermann</td>
+                <td>Musterstraße 456</td>
+                <td>Münster</td>
+            </tr>
+            <tr>
+                <td>Lisa Lauterbach</td>
+                <td>Lauterbachstraße 789</td>
+                <td>Leipzig</td>
+            </tr>
+        </table>
+
+        <script>
+            const searchInput = document.querySelector('#search');
+            searchInput.addEventListener('keyup', () => {
+                const searchString = searchInput.value.toLowerCase();
+                const tableRows = document.querySelectorAll('table tr');
+                tableRows.forEach(row => {
+                    let rowText = row.innerText.toLowerCase();
+                    row.style.display = rowText.includes(searchString) ? '' : 'none';
+                });
+            });
+        </script>
+    </body>
 </html>
