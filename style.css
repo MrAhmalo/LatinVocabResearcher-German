@@ -45,6 +45,9 @@ th {
   font-weight: bold;
   text-align: left;
   padding: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 td {
@@ -68,6 +71,13 @@ table, th, td {
 	border-radius: 5px;
 	overflow: hidden;
   }
+
+.sticky-header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+  }
+  
 
 
 #myInput {
