@@ -109,11 +109,11 @@ table, th, td {
   }
 
   #myInput {
-	width: 400px;
+	width: 200px;
   }
 
   #myTable {
-	height: 400px;
+	height: 200px;
   }
 
   tr:nth-child(odd) {
