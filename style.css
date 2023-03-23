@@ -36,6 +36,8 @@ table {
   width: 100%;
   margin-top: 20px;
   table-layout: fixed;
+  border-radius: 5px;
+  border: 5px solid #999999;
 }
 
 th {
@@ -46,8 +48,6 @@ th {
 }
 
 td {
-  border: 5px solid #999999;
-  border-radius: 5px;
   padding: 8px;
 }
 
