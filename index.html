@@ -1,91 +1,113 @@
 <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Simple PWA</title>
+	<link rel="canonical" href="https://simplepwa.com" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Icons and Colors -->
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="manifest" href="./manifest.json">
+	<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="./favicon.ico">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-TileImage" content="./mstile-144x144.png">
+	<meta name="msapplication-config" content="./browserconfig.xml">
+	<meta name="theme-color" content="#000000">
+	
+	<!-- SEO and Social Sharing and SEO -->
+	<meta name="description" content="Simple Progressive Web App (PWA) template" />
+	<meta name="robots" content="noodp" />
+	<meta name="author" content="Nicole Furlan">
+	<meta name="keywords" content="progressive web app, progressive web application, pwa, pwa progressive web app, pwa progressive web application, progressive app, basic progressive web app, basic progressive web application, basic pwa, example progressive web app, example progressive web application, example pwa, progressive web app basic, progressive web app builder, progressive web app example, progressive web app sample, progressive web app template, sample progressive web app, sample progressive web application, sample pwa, free progressive web application template, progressive web application template, progressive web app template free, progressive web app template free download, progressive web app html template, progressive web app template github" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Simple PWA" />
+	<meta property="og:description" content="Simple Progressive Web App (PWA) template" />
+	<meta property="og:url" content="https://simplepwa.com" />
+	<meta property="og:site_name" content="Simple PWA" />
+	<meta property="section:publisher" content="https://www.facebook.com/simplepwa/" />
+	<meta property="og:image" content="https://simplepwa.com/share.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Simple PWA" />
+	<meta name="twitter:description" content="Simple Progressive Web App (PWA) template" />
+	<meta name="twitter:site" content="@simplepwa" />
+	<meta name="twitter:image" content="https://simplepwa.com/share.jpg" />
+	<meta name="twitter:creator" content="@nicolemfurlan" />
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Javscript -->
+	<script>
+		if ("serviceWorker" in navigator) {
+			window.addEventListener("load", () => {
+				navigator.serviceWorker && navigator.serviceWorker.register("./sw.js");
+			});
+		}
+	</script>
+	<script defer src="./main.js"></script>
+ </head>
+
 <html>
-<head>
-  <style>
-    body { 
-      background-color: #000000; 
-      color: #ffffff;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    th, td {
-      text-align: center;
-      padding: 8px;
-    }
-    tr:nth-child(even){background-color: #f2f2f2}
-    th {
-      background-color: #4CAF50;
-      color: white;
-    }
-    input[type=text] {
-      width: 130px;
-      box-sizing: border-box;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-      background-color: white;
-      background-image: url('searchicon.png');
-      background-position: 10px 10px; 
-      background-repeat: no-repeat;
-      padding: 12px 20px 12px 40px;
-      -webkit-transition: width 0.4s ease-in-out;
-      transition: width 0.4s ease-in-out;
-    }
-    input[type=text]:focus {
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <title>Suche in einer Tabelle</title>
+  </head>
+  <body>
+    <input type="text" id="suche" placeholder="Wort suchen...">
+    <table id="meineTabelle">
+      <thead>
+        <tr>
+          <th>Spalte 1</th>
+          <th>Spalte 2</th>
+          <th>Spalte 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wort 1</td>
+          <td>Wort 2</td>
+          <td>Wort 3</td>
+        </tr>
+        <tr>
+          <td>Wort 4</td>
+          <td>Wort 5</td>
+          <td>Wort 6</td>
+        </tr>
+        <tr>
+          <td>Wort 7</td>
+          <td>Wort 8</td>
+          <td>Wort 9</td>
+        </tr>
+      </tbody>
+    </table>
 
-<h2>Searchable Table</h2>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for words.." title="Type in a name">
-
-<table>
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>30</td>
-  </tr>
-  <tr>
-    <td>Mary</td>
-    <td>Moe</td>
-    <td>40</td>
-  </tr>
-  <tr>
-    <td>July</td>
-    <td>Dooley</td>
-    <td>50</td>
-  </tr>
-</table>
-
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-</script>
-
-</body>
+    <script>
+      const meineTabelle = document.getElementById('meineTabelle');
+      const suchen = document.getElementById('suche');
+      suchen.addEventListener('input', function() {
+        const wort = this.value;
+        const trs = meineTabelle.querySelectorAll('tbody tr');
+        trs.forEach(function(tr) {
+          const tds = tr.querySelectorAll('td');
+          let istInTabelle = false;
+          tds.forEach(function(td) {
+            if (td.innerText.includes(wort)) {
+              istInTabelle = true;
+            }
+          });
+          if (istInTabelle) {
+            tr.style.display = '';
+          } else {
+            tr.style.display = 'none';
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
