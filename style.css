@@ -1,6 +1,6 @@
 html, body {
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 	font-family: helvetica, arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
@@ -83,4 +83,27 @@ code {
 
 code.image {
 	background-color: lightyellow;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th {
+  background-color: #eee;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
