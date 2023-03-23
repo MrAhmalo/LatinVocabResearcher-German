@@ -55,59 +55,54 @@
  </head>
 
 <html>
-  <head>
-    <title>Suche in einer Tabelle</title>
-  </head>
-  <body>
-    <input type="text" id="suche" placeholder="Wort suchen...">
-    <table id="meineTabelle">
-      <thead>
-        <tr>
-          <th>Spalte 1</th>
-          <th>Spalte 2</th>
-          <th>Spalte 3</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Wort 1</td>
-          <td>Wort 2</td>
-          <td>Wort 3</td>
-        </tr>
-        <tr>
-          <td>Wort 4</td>
-          <td>Wort 5</td>
-          <td>Wort 6</td>
-        </tr>
-        <tr>
-          <td>Wort 7</td>
-          <td>Wort 8</td>
-          <td>Wort 9</td>
-        </tr>
-      </tbody>
-    </table>
+<head>
+<title>Tabelle mit Suchfunktion</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</head>
+<body>
 
-    <script>
-      const meineTabelle = document.getElementById('meineTabelle');
-      const suchen = document.getElementById('suche');
-      suchen.addEventListener('input', function() {
-        const wort = this.value;
-        const trs = meineTabelle.querySelectorAll('tbody tr');
-        trs.forEach(function(tr) {
-          const tds = tr.querySelectorAll('td');
-          let istInTabelle = false;
-          tds.forEach(function(td) {
-            if (td.innerText.includes(wort)) {
-              istInTabelle = true;
-            }
-          });
-          if (istInTabelle) {
-            tr.style.display = '';
-          } else {
-            tr.style.display = 'none';
-          }
-        });
-      });
-    </script>
-  </body>
+<h2>Tabelle mit Suchfunktion</h2>
+
+<input id="myInput" type="text" placeholder="Suche nach Wörtern...">
+<br><br>
+
+<table id="myTable">
+  <tr>
+    <th>Name</th>
+    <th>Alter</th>
+    <th>Stadt</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>25</td>
+    <td>New York</td>
+  </tr>
+  <tr>
+    <td>Mary</td>
+    <td>37</td>
+    <td>Paris</td>
+  </tr>
+  <tr>
+    <td>Bob</td>
+    <td>43</td>
+    <td>London</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>27</td>
+    <td>Berlin</td>
+  </tr>
+</table>
+
+</body>
 </html>
