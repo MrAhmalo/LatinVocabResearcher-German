@@ -113,5 +113,10 @@ table, th, td {
   }
 
   #myInput {
-	width: 600px;
+	width: 400px;
   }
+
+  #myTable {
+	height: 400px;
+  }
+  
